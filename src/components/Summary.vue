@@ -3,8 +3,11 @@
     <h1>Order Summary</h1>
     <div class='productList'>
       <div class='productDetails' v-for="product in cart">
-        <h3 class='productDescription'><img :src="product.image" :alt="product.name"> {{product.name}}</h3>
-        <h3 class='quantity'> Quantity: {{product.quantity}}</h3>
+        <img :src="product.image" :alt="product.name">
+        <div class='product'>
+          <h3 class='productDescription'> {{product.name}}</h3>
+          <h3 class='productDescription'> Quantity: {{product.quantity}}</h3>
+        </div>
       </div><br>
     </div>
     <h2>Total: $ {{total}}</h2>
@@ -51,10 +54,14 @@ export default {
 		display: inline-flex;
 	}
 	.productDescription{
-		display: inline-flex;
+/*		display: inline-flex;
 	    align-items: center;
-	}
+*/	
+    margin:0;
+    padding:0;
+  }
 	.productDetails{
+        margin: 1rem;
 		display: inline-flex;
 	    align-items: center;
 	    flex-wrap: wrap;
@@ -66,5 +73,15 @@ export default {
 		background: light-grey;
 		padding:25px;
 	}
+  .product{
+    text-align: right;
+  }
+  @media only screen and (min-width: 500px) {
+    .product {
+      display: flex;
+      justify-content: space-between;
+      min-width: 20rem;
+    }
+  }
 
 </style>
