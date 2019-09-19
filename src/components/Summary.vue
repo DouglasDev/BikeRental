@@ -43,7 +43,7 @@ export default {
 }
 
 </script>
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped>
 	img{
 		height: 50px;
@@ -54,9 +54,6 @@ export default {
 		display: inline-flex;
 	}
 	.productDescription{
-/*		display: inline-flex;
-	    align-items: center;
-*/	
     margin:0;
     padding:0;
   }

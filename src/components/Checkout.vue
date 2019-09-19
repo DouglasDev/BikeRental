@@ -1,5 +1,8 @@
 <template>
-	<h2>Your order has been placed and you will receive a confirmation email shortly. <br> Thank you for choosing Rental Bikes!</h2>
+	<h2>
+		Your order has been placed and you will receive a confirmation email shortly. 
+		<br> Thank you for choosing Rental Bikes!
+	</h2>
 </template>
 
 <script>

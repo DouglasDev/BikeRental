@@ -2,12 +2,18 @@
   <main>
     <h1>Products</h1>
     <div>
-      <button v-for="productType in Object.keys(productTypes)" @click='changeProductType(productType)' :class='currentProductType===productType? "selectedProductType":""'>
+      <button 
+        v-for="productType in Object.keys(productTypes)" 
+        @click='changeProductType(productType)' 
+        :class='currentProductType===productType? "button_secondary":""'>
         {{productTypes[productType]}} 
       </button>
     </div>
     <div class='productList' >
-      <div class='productDetails' :class="product.quantity>0?'selectedProduct':''" v-for="product in products" v-if="product.product_type===currentProductType || currentProductType==='all'">
+      <div class='productDetails' 
+      :class="product.quantity>0?'selectedProduct':''" 
+      v-for="product in products" 
+      v-show="product.product_type===currentProductType || currentProductType==='all'">
         <h2>{{product.name}}</h2>
         <img :src="product.image" :alt="product.name">
         <h3>$ {{product.price}}</h3>
@@ -17,11 +23,15 @@
           <span class="lgText"> {{product.quantity}} </span>
           <button @click='changeQuantity(product.id,1)'>+</button>
         </div>
-      </div><br>
+      </div>
+      <br>
     </div>
     <div class="orderInfo">
       <h3 v-for="warning in warnings" class="warning">{{warning}}</h3>
-      <h2 class="total"><div>Total: $ {{total}}  &nbsp; </div><button class="button_primary" @click="checkout">Proceed to Checkout</button></h2>
+      <h2 class="total">
+        <div>Total: $ {{total}}  &nbsp; </div>
+        <button class="button_primary" @click="checkout">Proceed to Checkout</button>
+      </h2>
     </div>
   </main>
 </template>
@@ -87,7 +97,7 @@ function getScrollPercent() {
         b = document.body,
         st = 'scrollTop',
         sh = 'scrollHeight';
-    return (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
+    return parseInt((h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100,10)
 }
 
 const storeScroll = () => {
@@ -99,7 +109,6 @@ storeScroll();
 
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   input{
     width: 2rem;
@@ -108,7 +117,7 @@ storeScroll();
     text-align: center;
   }
   main{
-    padding-bottom: 5rem
+    padding-bottom: 8rem
   }
   .productList{
     margin: auto;
