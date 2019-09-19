@@ -64,7 +64,7 @@ export default {
       this.currentProductType=productType
     },
     checkout(){
-      let cart = this.products.filter(product=>product.quantity>0)
+      const cart = this.products.filter(product=>product.quantity>0)
       this.warnings=[]
       if (!cart.some(product=>product.product_type=='bike'))this.warnings.push('Please Select At Least One Bike.')
       if (this.warnings.length) return
@@ -72,7 +72,7 @@ export default {
     },
     changeQuantity(id,val){
       const index = this.products.findIndex(product=> product.id===id)
-      let product= this.products[index]
+      const product= this.products[index]
       this.$set(product, 'quantity', product.quantity+val)
       if (product.quantity<0)this.$set(product, 'quantity',0)
     }
