@@ -27,7 +27,7 @@ export default {
     cart: Array,
   },
   mounted(){
-      this.total= this.cart.reduce((acc,product)=> product.quantity>0 ? acc+product.quantity*product.price : acc, 0)
+      this.total= this.cart.reduce((acc,product)=> product.quantity>0 ? acc+product.quantity*product.price : acc, 0).toFixed(2);
   },
   methods:{
   	confirmPurchase(){

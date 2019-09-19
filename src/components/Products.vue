@@ -20,8 +20,8 @@
       </div><br>
     </div>
     <div class="orderInfo">
-      <h3 v-for="warning in warnings">{{warning}}</h3>
-      <h2 class="total">Total: $ {{total}}  &nbsp; <button class="button_primary" @click="checkout">Proceed to Checkout</button></h2>
+      <h3 v-for="warning in warnings" class="warning">{{warning}}</h3>
+      <h2 class="total"><div>Total: $ {{total}}  &nbsp; </div><button class="button_primary" @click="checkout">Proceed to Checkout</button></h2>
     </div>
   </main>
 </template>
@@ -46,7 +46,7 @@ export default {
   },
   computed:{
     total(){
-      return this.products.reduce((acc,product)=> product.quantity>0 ? acc+product.quantity*product.price : acc, 0)
+      return this.products.reduce((acc,product)=> product.quantity>0 ? acc+product.quantity*product.price : acc, 0).toFixed(2);
     }
   },
   methods:{
@@ -147,6 +147,13 @@ storeScroll();
   .total{
     align-items: center;
     display: inline-flex;
+    margin-top: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  .warning{
+    margin-bottom: 0;
   }
   .lgText{
     font-size: 1.5rem
