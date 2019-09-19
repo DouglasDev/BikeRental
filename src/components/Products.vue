@@ -66,7 +66,7 @@ export default {
     checkout(){
       const cart = this.products.filter(product=>product.quantity>0)
       this.warnings=[]
-      if (!cart.some(product=>product.product_type=='bike'))this.warnings.push('Please Select At Least One Bike.')
+      if (!cart.some(product=>product.product_type==='bike'))this.warnings.push('Please Select At Least One Bike.')
       if (this.warnings.length) return
       else this.$emit('viewSummary', cart)
     },
