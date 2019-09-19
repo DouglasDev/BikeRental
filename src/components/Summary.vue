@@ -50,7 +50,7 @@ export default {
 		margin-right: 1rem;
 	}
 	.productList{
- 	    flex-direction: column;
+ 	  flex-direction: column;
 		display: inline-flex;
 	}
 	.productDescription{
@@ -58,14 +58,14 @@ export default {
     padding:0;
   }
 	.productDetails{
-        margin: 1rem;
+    margin: 1rem;
 		display: inline-flex;
-	    align-items: center;
-	    flex-wrap: wrap;
-	    justify-content: center;
-   		width: auto;
-	    justify-content: space-between;
-   	}
+	  align-items: center;
+	  flex-wrap: wrap;
+	  justify-content: center;
+    width: auto;
+    justify-content: space-between;
+  }
 	.quantity{
 		background: light-grey;
 		padding:25px;
